@@ -10,6 +10,11 @@ const baseStyles = {
   footerLink: "color:#58a6ff; text-decoration:none;"
 };
 
+const getLogoSrc = (cidLogoName, logoUrl) => {
+  const fallbackLogo = logoUrl || process.env.LOGO_URL || 'https://i.imgur.com/tE2wV5A.png';
+  return cidLogoName ? `cid:${cidLogoName}` : fallbackLogo;
+};
+
 const defaultSignatureHtml = () => `
 <div style="${baseStyles.footer}">
   <div>Best regards,</div>
@@ -26,12 +31,10 @@ const templates = {
     getText: ({ name }) =>
       `Hi ${name},\n\nThank you for applying to join Falcons. We've successfully received your application, and our team is currently reviewing it.\n\nWe appreciate your interest in our community and will be in touch with the next steps soon.\n\nUntil then, keep building, keep exploring, and remember: Own the Sky.\n\nBest regards,\nThe Falcons Team`,
     getHtml: ({ name, logoUrl, cidLogoName }) => {
-      const fallbackLogo = logoUrl || process.env.LOGO_URL || 'https://i.imgur.com/tE2wV5A.png';
-      const logoSrc = cidLogoName ? `cid:${cidLogoName}` : fallbackLogo;
       return `
 <div style="${baseStyles.container}">
   <div style="${baseStyles.header}">
-    <img src="${logoSrc}" alt="Falcons Logo" style="${baseStyles.logo}" />
+    <img src="${getLogoSrc(cidLogoName, logoUrl)}" alt="Falcons Logo" style="${baseStyles.logo}" />
   </div>
   <div style="${baseStyles.content}">
     <h1 style="${baseStyles.title}">Your Application is in Review!</h1>
