@@ -1,0 +1,285 @@
+/* Cyber Background Styles - Extracted from Falcons Project */
+
+/* .cyber-background {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+  overflow: hidden;
+} */
+
+
+.cyber-background {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+  overflow: hidden;
+}
+
+
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(26, 26, 46, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 46, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 2;
+  animation: gridMove 20s linear infinite;
+}
+
+/* .cyber-grid {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100vw;     
+  height: 100vh;
+  background-image: 
+    linear-gradient(rgba(26, 26, 46, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 46, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 2;
+  animation: gridMove 20s linear infinite;
+} */
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.cyber-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cyber-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+/* Shooting star styles */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #00f5ff, #ffffff);
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cyber-particles {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-grid {
+    background-size: 25px 25px;
+  }
+}
+
+/* Optional: Matrix rain effect */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* Optional: Cyber glitch effect */
+.cyber-glitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 49%, #ff1493 50%, transparent 51%);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: multiply;
+  animation: glitchEffect 0.2s ease-in-out;
+}
+
+/* @keyframes glitchEffect {
+  0% { opacity: 0, transform: 'translateX(0)' }
+  25% { opacity: 0.3, transform: 'translateX(2px)' }
+  50% { opacity: 0, transform: 'translateX(-2px)' }
+  75% { opacity: 0.2, transform: 'translateX(1px)' }
+  100% { opacity: 0, transform: 'translateX(0)' }
+} */
+
+/* Optional: Futuristic border animation */
+.cyber-border {
+  position: relative;
+  border: 1px solid transparent;
+  background: linear-gradient(45deg, #0f172a, #1e293b) padding-box,
+              linear-gradient(45deg, #00f5ff, #8a2be2, #00f5ff) border-box;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional: Cyber pulse effect */
+.cyber-pulse {
+  animation: cyberPulse 2s ease-in-out infinite;
+}
+
+@keyframes cyberPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 245, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.8), 0 0 30px rgba(138, 43, 226, 0.4);
+  }
+}
+
+/* Optional: Title glow effect */
+.cyber-title-glow {
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(138, 43, 226, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.8), 0 0 60px rgba(138, 43, 226, 0.5);
+  }
+}
+
+/* Optional: Button enhancements */
+.cyber-button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+/* Optional: Feature card effects */
+.cyber-card {
+  position: relative;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, #00f5ff, transparent);
+  animation: rotate 8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-card:hover::before {
+  opacity: 0.1;
+}
+
+.cyber-card::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 14px;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cyber-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+}
+
+/* Optional: Scrollbar styling */
+.cyber-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00f5ff, #8a2be2);
+  border-radius: 4px;
+}
+
+.cyber-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8a2be2, #00f5ff);
+}
+
+/* Optional: Focus states for accessibility */
+.cyber-focus:focus {
+  outline: 2px solid #00f5ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Optional: High contrast mode */
+@media (prefers-contrast: high) {
+  .cyber-card {
+    border-width: 2px;
+  }
+}
+
+/* Optional: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cyber-grid,
+  .cyber-border,
+  .cyber-pulse,
+  .cyber-title-glow,
+  .cyber-card::before {
+    animation: none;
+  }
+}
